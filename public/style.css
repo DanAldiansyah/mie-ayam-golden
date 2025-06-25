@@ -1,0 +1,371 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primary: #fff;
+    --secondary: #000;
+    --thirdary: rgb(255, 218, 10);
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 7%;
+    z-index: 1000;
+    background-color: var(--primary);
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.header .logo span{
+    color: var(--thirdary);
+}
+
+.header .nav a{
+    margin: 0 1rem;
+    color: var(--secondary);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header .nav a:hover{
+    color: var(--thirdary);
+}
+
+#hamburger-menu{
+    display: none;
+}
+
+.header .extra {
+    display: none;
+}
+
+.header .extra a{
+    font-size: 2rem;
+    color: var(--secondary);
+}
+
+.hero{
+    min-height: 100dvh;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+}
+
+.hero .content{
+    max-width: 600px;
+}
+
+.hero .content h1{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero .content h1 span{
+    color: var(--thirdary);
+}
+
+.hero .content p{
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+.hero .content a{
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--thirdary);
+    color: var(--secondary);
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.hero .hero-image img{
+    height: 500px;
+    border-radius: 12px;
+}
+
+.hero .content a:hover{
+    background-color: var(--secondary);
+    color: var(--thirdary);
+}
+.hero .content a:active{
+    background-color: var(--thirdary);
+    color: var(--secondary);
+}
+
+.menu{
+    padding: 5rem 7%;
+    min-height: 100dvh;
+}
+
+.menu h2{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--secondary);
+}
+
+.menu .menu-items{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.menu .menu-items .menu-item{
+    width: min(16rem , 100%);
+    background-color: var(--primary);
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+}
+
+.menu .menu-items .menu-item .menu-item-details{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.menu .menu-items .menu-item .menu-item-details .pricing{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu .menu-items .menu-item .menu-item-details .pricing a{
+    padding: 0.5rem 1.5rem;
+    background-color: var(--thirdary);
+    color: var(--secondary);
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.menu img{
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+}
+
+.menu .menu-items .menu-item .menu-item-details .pricing button:hover{
+    background-color: var(--secondary);
+    color: var(--thirdary);
+    transition: all 0.5s ease;
+}
+
+.testimoni{
+    min-height: 100dvh;
+    padding: 5rem 7%;
+    background-color: var(--primary);
+}
+
+.testimoni h2{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--secondary);
+}
+
+.testimoni .testimoni-items h3{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.testimoni .testimoni-items .ratings{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.testimoni .testimoni-items .ratings .user{
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
+    max-width: 45%;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.testimoni .testimoni-items .ratings .user{
+    min-width: 25%;
+}
+
+
+.testimoni i{
+    color: var(--thirdary);
+    margin: 1rem 0;
+}
+
+
+.hubungi-kami{
+    min-height: 100dvh;
+    padding: 5rem 7%;
+    background-color: var(--primary);
+}
+
+.hubungi-kami .contents{
+    display: flex;
+}
+
+.hubungi-kami .contents .desc h1{
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.hubungi-kami .contents .desc p{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.hubungi-kami .contents .social-media {
+    margin-top: 2rem;
+    display: flex;
+}
+
+.hubungi-kami .contents .desc .social-media i{
+    font-size: 3rem;
+    margin-right: 1rem;
+}
+
+footer{
+    background-color: var(--thirdary);
+    padding: 1rem 7%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--primary);
+}
+
+body h2{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.form{
+    margin-top: 2rem;
+    padding: 1rem 7%;
+    display: flex;
+    justify-content: center;
+}
+
+#order-form{
+    width: 30rem;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#order-form input{
+    width: 100%;
+    padding: .3rem;
+    margin: 1rem 0;
+    outline: none;
+}
+
+#order-form button{
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--thirdary);
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#order-form a{
+    padding: .5rem 1rem;
+    background-color: var(--secondary);
+    color: var(--primary);
+    margin-left: 1rem;
+    border-radius: 4px;
+}
+
+@media screen and (max-width:480px) {
+
+    .header .nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        height: 100dvh;
+        width: 16rem;
+        background-color: var(--primary);
+    }
+    .header .nav a{
+        display: block;
+        margin: 1.5rem ;
+        color: var(--secondary);
+    }
+
+    .header .nav.active{
+        right: 0;
+        transition: ease-in-out .4s;
+    } 
+
+    .header .extra{
+        display: block;
+    }
+
+    #hamburger-menu{
+        display: inline-block;
+    }
+
+    .hero{
+        margin-top: 2rem;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+    }
+    
+
+    .hero .hero-image img{
+        width: 100%;
+        height: 250px;
+    }
+
+    .menu .menu-items{
+        flex-wrap: wrap;
+    }
+
+    .testimoni .testimoni-items .ratings{
+        font-size: smaller;
+    }
+
+    .hubungi-kami .contents{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hubungi-kami iframe{   
+        height: 250px;
+        width: 350px;
+    }
+
+    footer{
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+}
+
