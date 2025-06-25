@@ -13,7 +13,7 @@ app.post("/api/order", async (req, res) => {
   const kirim = await fetch("https://api.fonnte.com/send", {
     method: "POST",
     headers: {
-      Authorization: "maicVd5z1anmPzSGKYj8",
+      Authorization: "",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ target: nomorFormatted, message: pesan }),
