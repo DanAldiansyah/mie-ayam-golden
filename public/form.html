@@ -4,43 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Pemesanan</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        background: #f9f9f9;
+      }
+      h2{
+        text-align: center;
+      }
+
+      form {
+        max-width: 20rem;
+        margin: auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      input{
+        margin: .7rem 0;
+        width: 100%;
+        padding: .5rem;
+        outline: none;
+
+      }
+
+      button {
+        font-size: 1rem;
+        padding: .7rem 1.2rem;
+        border: none;
+        border-radius: 2px;
+        background: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <h2>Form Pemesanan</h2>
-    <div class="form">
-      <form id="order-form">
-        <input type="text" name="nama" placeholder="Nama Anda" required />
-        <br>
-        <input type="text" name="produk" id="produk" readonly />
-        <br>
-        <input
-          type="number"
-          name="jumlah"
-          placeholder="Jumlah Pesanan"
-          required
-        /><br>
-        <input
-          type="text"
-          name="alamat"
-          placeholder="Alamat Pengiriman"
-          required
-        /><br>
-        <input
-          type="text"
-          name="nomor_wa"
-          placeholder="No. WhatsApp (08xxxx)"
-          required
-        /><br>
-        <button type="submit">Kirim Pesanan</button>
-        <a href="index.html">Kembali</a>
-      </form>
-    </div>
-    <script src="index.js"></script>
+    <form id="order-form">
+      <input type="text" name="nama" placeholder="Nama Anda" required />
+      <input type="text" name="produk" id="produk" readonly />
+      <input
+        type="text"
+        name="alamat"
+        placeholder="Alamat Pengiriman"
+        required
+      />
+      <input
+        type="text"
+        name="nomor_wa"
+        placeholder="No. WhatsApp (08xxxx)"
+        required
+      /> <br>
+      <button type="submit">Kirim Pesanan</button>
+    </form>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const produk = params.get("produk");
+      if (produk) document.getElementById("produk").value = produk;
+
+      document
+        .getElementById("order-form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const data = Object.fromEntries(new FormData(this).entries());
+
+          const res = await fetch("/api/order", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+
+          const result = await res.json();
+          alert(result.message);
+        });
+    </script>
   </body>
 </html>
+//
